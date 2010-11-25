@@ -2,9 +2,9 @@ ActionController::Routing::Routes.draw do |map|
  # map.resources :statuses
 
   map.resources :projects
-
   map.resources :roles
-
+  
+  map.resource :log, :controller => "logs", :member => "backup"
   map.signup '/signup', :controller => 'users', :action => 'create', :conditions => { :method => :post}
   map.signup '/signup', :controller => 'users', :action => 'new', :conditions => { :method => :get}
   map.resource :account, :controller => 'users'
