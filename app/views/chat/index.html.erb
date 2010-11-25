@@ -1,0 +1,17 @@
+<html>
+	  <head>
+	    <%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag "chat" %>
+	  </head>
+	  <body>
+	  	<div class="chat_box">
+	  		<ul id="chat_data" style="list-style:none"></ul>
+		</div>
+	    <%= form_remote_tag(
+	          :url => { :action => :send_data },
+	          :complete => "$('chat_input').value = ''" ) %>
+	      <%= text_field_tag( 'chat_input', '', { :size => 20, :id => 'chat_input'} ) %>
+	      <%= submit_tag "Send" %>
+	    </form>
+	  </body>
+	</html>

@@ -1,0 +1,16 @@
+<% form_for @status do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :project %><br />
+    <%= f.text_field :project %>
+  </p>
+  <p>
+    <%= f.label :task %><br />
+    <%= f.text_area :task %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

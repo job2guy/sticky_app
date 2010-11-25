@@ -1,0 +1,12 @@
+<% form_for @status ,:url=>{:action=>'update' , :id=>@project.id} do |f| %>
+  <%= f.error_messages %>
+	<ul>
+    <li>
+      <a href="#">
+        <h2><%=truncate(@project.name, :length =>12, :omission =>"...")%></h2>
+        <p><%= f.text_area :task ,:size=>'17x5'%></p>
+		<p><%= f.submit "sent"%></p>
+      </a>
+    </li>
+	</ul>
+<% end %>

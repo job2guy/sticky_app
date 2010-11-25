@@ -1,0 +1,47 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+#app-body {
+  padding: 18px 10px 0;
+  background: #FFF url(/images/bg_app-body.png) repeat-x;
+}
+#app-main .asset-module {
+  margin: 0 10px 10px 0;
+  padding: 5px;
+  width: 120px;
+/*  height: 109px;*/
+  float: left;
+  background: url(/images/bg_asset-module.png) bottom left no-repeat;
+}
+#app-main .asset-module .asset-info {
+  margin-bottom: 11px;
+  height: 110px;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of bene name */
+  line-height: 1;
+  background: #efefef url(/images/bg_asset-info.png) bottom left repeat-x;
+  border: 1px solid #c0bfbf;
+}
+<div class="asset-module png-bg">
+      <div class="asset-info letter">
+        <p class="asset-name encrypted"><a href="<%= edit_letter_url(letter) %>"><%= h truncate(letter.decrypt_subject, 15, '...') %></a></p>
+        <% if letter.beneficiary_id %>
+        <p class="bene-name"><%= letter.beneficiary.name %></p>
+        <% elsif !letter.email.blank? %>
+        <p class="bene-name"><%= h letter.decrypt_email %></p>
+        <% else %>
+        <p class="no-bene">No beneficiary has been linked yet.</p>
+        <% end %>
+      </div>
+  		<ul class="asset-actions">
+        <li class="action-edit"><a href="<%= edit_letter_url(letter) %>" title="Edit" class="png-bg">edit</a></li>
+  		  <li class="action-delete">
+  		    <%= link_to("Delete", { :action => "destroy", :id => letter },
+            :confirm => "Are you sure you want to delete this letter?",
+            :method => :delete, :class => "png-bg", :title => "Delete") %>
+  		  </li>
+  		</ul>
+  	</div> <!-- asset-module ends -->
+  	---------------------------------------------------
+  	<div id="app-body" class="clearfix">
+            <%= yield %>
+          </div>

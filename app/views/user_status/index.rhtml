@@ -1,0 +1,25 @@
+<%if !@statuses.blank?%>
+<%if current_user.role.name.to_s == 'Developer'%>
+  <ul>
+	<%@statuses.each do |status| %>
+    <li>
+      <a href="#">
+        <h2 style='font-size:small;'><%=truncate(status.project.name, :length =>12, :omission =>"...")%></h2>
+        <p style='font-size:small;'><%= status.task %></p>
+		<p style='font-size:small;'>[<%= status.user.login%>]</p>
+      </a>
+    </li>
+	<%end%>
+  </ul>
+<%else%>
+	<%@project=Project.all%>
+	<%@project.each do |project|%>
+		<h2><%=truncate(project.name, :length =>12, :omission =>"...")%></h2><br/>
+		
+		
+	<%end%>
+<%end%>	
+	
+<%else%>
+<font size=3 color='red'>No record found</font>
+<%end%>

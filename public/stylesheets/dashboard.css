@@ -1,0 +1,44 @@
+ /* #header {
+    padding:5px 10px;
+    background:#ddd;
+    }
+    
+   #main {
+   	background:#9c9;
+  	float:left;
+   	width:679px;
+	height: 400px;
+   	padding:5px;
+   }
+   
+   #sidebar {
+   float:right;
+   width:202px;
+   padding:6px;
+   background:#99c;
+   }
+   #footer {
+   clear:both;
+   padding:5px 10px;
+   background:#cc9;
+   }
+  */
+ #container
+ {
+ 	width:1000px;
+ } 
+
+ #main{
+ 	width:750px;
+	float:left;
+	padding:6px;
+	//background:#99c;
+	//border:solid 1px red;
+ }
+ #sidebar{
+ 	width:210px;
+	float:left;
+	padding:6px;
+	background:#cc9;
+	//border:solid 1px red;
+ }

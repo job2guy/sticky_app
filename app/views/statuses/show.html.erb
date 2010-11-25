@@ -1,0 +1,20 @@
+<% title "Status" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @status.user %>
+</p>
+<p>
+  <strong>Project:</strong>
+  <%=h @status.project %>
+</p>
+<p>
+  <strong>Task:</strong>
+  <%=h @status.task %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_status_path(@status) %> |
+  <%= link_to "Destroy", @status, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", statuses_path %>
+</p>
