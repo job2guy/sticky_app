@@ -9,7 +9,8 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       flash[:notice] = "Login successful!"
       #redirect_back_or_default account_url
-      redirect_to dashboard_url
+      #redirect_to dashboard_url
+      redirect_to :controller=>'user_status'
     else
       render :action => :new
     end

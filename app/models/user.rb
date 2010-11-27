@@ -3,6 +3,4 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :statuses
   has_many :projects
-  belongs_to :role
-  
 end

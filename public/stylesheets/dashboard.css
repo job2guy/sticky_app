@@ -1,44 +1,83 @@
- /* #header {
-    padding:5px 10px;
-    background:#ddd;
-    }
-    
-   #main {
-   	background:#9c9;
-  	float:left;
-   	width:679px;
-	height: 400px;
-   	padding:5px;
-   }
-   
-   #sidebar {
-   float:right;
-   width:202px;
-   padding:6px;
-   background:#99c;
-   }
-   #footer {
-   clear:both;
-   padding:5px 10px;
-   background:#cc9;
-   }
-  */
+
  #container
  {
  	width:1000px;
  } 
 
  #main{
- 	width:750px;
+ 	width:780px;
 	float:left;
-	padding:6px;
+	padding:2px;
 	//background:#99c;
 	//border:solid 1px red;
  }
  #sidebar{
- 	width:210px;
+ 	width:200px;
 	float:left;
 	padding:6px;
 	background:#cc9;
 	//border:solid 1px red;
  }
+ #error_container{
+ 	width: 75%;
+  	margin: 0 auto;
+  	//background-color: #FFF;
+  	padding: 20px 20px;
+	//border:solid 1px red;
+ }
+ 
+ #flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+.list{
+	color:blue;
+}

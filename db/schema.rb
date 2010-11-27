@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101117110121) do
+ActiveRecord::Schema.define(:version => 20101127094918) do
 
   create_table "messages", :force => true do |t|
     t.text     "type"
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(:version => 20101117110121) do
     t.text     "task"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "task_date"
   end
 
   add_index "statuses", ["project_id"], :name => "index_statuses_on_project_id"
+  add_index "statuses", ["task_date"], :name => "index_statuses_on_task_date"
   add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
 
   create_table "users", :force => true do |t|

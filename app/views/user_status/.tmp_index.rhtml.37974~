@@ -1,6 +1,5 @@
 <%if !@statuses.blank?%>
 <%if current_user.role.name.to_s == 'Developer'%>
-<p><%= link_to "view all Tasks", tasks_path ,:class => "list" %></p>
   <ul>
 	<%@statuses.each do |status| %>
     <li>
@@ -14,7 +13,6 @@
   </ul>
 <%else%>
 	<%if @status_flag%>
-	<p><%= link_to "view all Tasks", tasks_path ,:class => "list" %></p>
 		<ul>
 	    <%@statuses.each do |status|%>
 			<li>
@@ -28,11 +26,11 @@
 		</ul>
 	<%else%>
 		<%@project=Project.all%>
-		
 		<%@project.each do |project|%>
 		<ul>
 	    	<%@statuses.each do |status|%>
 		   	<%if status.project.id==project.id%>
+		   	<h3><%#=h (project.name.capitalize)%></h3><br/>
 			<li>
 		      <a href="#">
 		        <h2 style='font-size:small;'><%=truncate(status.project.name, :length =>12, :omission =>"...")%></h2>
@@ -46,4 +44,6 @@
 			<%end%>
 		<%end%>	
 	<%end%>
+<%else%>
+<font size=3 color='red'><%=flash[:notice]%><%flash[:notice]=nil%></font>
 <%end%>

@@ -1,4 +1,5 @@
 class RolesController < ApplicationController
+  before_filter :require_user
   def index
     @roles = Role.all
   end

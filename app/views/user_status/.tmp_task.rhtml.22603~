@@ -1,3 +1,8 @@
 <% title "New Task" %>
 <p><%= link_to "Back to List", tasks_path ,:class => "list" %></p>
 <%= render :partial => 'form' %>
+<style>
+	.list{
+		color:blue;
+	}
+</style>

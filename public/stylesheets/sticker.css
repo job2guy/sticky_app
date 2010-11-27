@@ -14,6 +14,12 @@ h2,p{
   font-size:100%;
   font-weight:normal;
 }
+h3{
+	font-size:100%;
+	font-weight:normal;
+	color:#ffffff;
+	font-size:large;
+}
 ul,li{
   list-style:none;
 }

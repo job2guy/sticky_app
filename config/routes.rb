@@ -2,9 +2,9 @@ ActionController::Routing::Routes.draw do |map|
  # map.resources :statuses
 
   map.resources :projects
-
   map.resources :roles
-
+  
+  map.resource :log, :controller => "logs", :member => "backup"
   map.signup '/signup', :controller => 'users', :action => 'create', :conditions => { :method => :post}
   map.signup '/signup', :controller => 'users', :action => 'new', :conditions => { :method => :get}
   map.resource :account, :controller => 'users'
@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   
   map.dashboard '/dashboard' ,:controller=>"dashboard",:action=>'index'
-  
+  map.admin_view '/project_task_list/:id' , :controller=>'user_status', :action=>'index',:flag=>true
   map.user_task '/task',:controller=>"user_status",:action=>'task'
   map.tasks '/tasks',:controller=>"user_status",:action=>'index'
   # The priority is based upon order of creation: first created -> highest priority.

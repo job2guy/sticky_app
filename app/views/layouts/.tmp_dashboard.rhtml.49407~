@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  	<meta charset="utf-8" />
+    <title><%= h(yield(:title) || "Sticky note") %></title>
+    <%= stylesheet_link_tag 'dashboard','sticker' %>
+	<meta charset="utf-8" />
+  </head>
+  <body>
+    <div id='container'>
+    	
+		<div id='main'>
+			<%= yield%>
+		</div>	
+		<div id='sidebar'><b>Projects</b><br/><br/>
+			<%@projects=Project.all
+		      if !@projects.blank? %>
+			  <%@projects.each do |project|%>
+			  <%= link_to truncate(project.name, :omission =>"...", :length =>25),user_task_path(:id=>project.id)%>
+			  <%if current_user.role.name.to_s == 'Admin' || 'Manager' || 'PM'%><%count_user=count_user(project.id)%>
+			  	(<%=count_user%>)
+			  <%end%><br/>
+			  
+			  <%end%>
+			  <%end%>
+		</div>
+	</div>
+	</body>
+</html>

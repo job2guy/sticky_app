@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  before_filter :require_user
   def index
     @statuses = Status.all
   end

@@ -6,6 +6,6 @@ class AddRoleToUser < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :users, :role
+    remove_column :users, :role_id
   end
 end
